@@ -9,7 +9,7 @@
     <Version>1.0.0</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>flame.png</PackageIcon>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://www.nuget.org/packages/DiagramNet/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mmeents/DiagramNet</RepositoryUrl>
     <PackageTags>Diagram Control .Net C# dalssoft  </PackageTags>
     <Copyright>Copyright © 2022 Sky High Productions, LLC</Copyright>

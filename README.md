@@ -4,9 +4,9 @@ Is a project based off of work done by Original: https://github.com/dalssoft/dia
 
 DiagramNET is a free open-source diagramming tools written entirely in C#.  It is targeting .Net 6.0.
 
-DiagramNet plans to be a package on Nuget (TBD)
+DiagramNet plans to be a package on Nuget https://www.nuget.org/packages/DiagramNet/
 
-Roadmap,
+Upcomming Roadmap:
 
 Finish Conversion of control from .Net v2 - .Net 6
   - Enable nullable types and work out explicit definitions of the null types.
@@ -18,7 +18,7 @@ Finish Conversion of control from .Net v2 - .Net 6
   - push updates to nuget.
 
 Convert Test Application to .Net 6
-  Work out test script and verify all the features function work.
+  - Work out test script and verify all the features function work.
 
 Use as a tool to build the next generation of great apps.  
 
