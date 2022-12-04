@@ -9,13 +9,13 @@ DiagramNet plans to be a package on Nuget (TBD)
 Roadmap,
 
 Finish Conversion of control from .Net v2 - .Net 6
-  Enable nullable types and work out explicit definitions of the null types.
-  Change out the BinaryFormatter serilization in favor of Json serilization.
-    Verify Save restore undo changes are working.
-  Publish the package on nuget.
-  Foreach branch on github 
-    compare differences and work into future versions the best from the web.
-    push updates to nuget.
+  - Enable nullable types and work out explicit definitions of the null types.
+  - Change out the BinaryFormatter serilization in favor of Json serilization.
+      - Verify Save restore undo changes are working.
+  - Publish the package on nuget.
+  - Foreach branch on github 
+      - compare differences and work into future versions the best from the web.
+  - push updates to nuget.
 
 Convert Test Application to .Net 6
   Work out test script and verify all the features function work.
