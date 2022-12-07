@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 namespace DiagramNet.Elements {
 	[Serializable]
 	public class RectangleElement : BaseElement, IControllable, ILabelElement {
-		protected Color fillColor1 = Color.White;
+		protected Color fillColor1 = Color.LightGray;
 		protected Color fillColor2 = Color.DodgerBlue;
 		protected LabelElement label = new();
 

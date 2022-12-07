@@ -41,6 +41,7 @@ namespace DiagramNet {
 
 		public Document() { }
 
+
 		#region Add Methods
 		public void AddElement(BaseElement el) {
 			elements.Add(el);
@@ -64,7 +65,7 @@ namespace DiagramNet {
 			elements.EnabledCalc = true;
 		}
 
-		internal static bool CanAddLink(ConnectorElement connStart, ConnectorElement connEnd) {
+		internal bool CanAddLink(ConnectorElement connStart, ConnectorElement connEnd) {
 			return ((connStart != connEnd) && (connStart.ParentElement != connEnd.ParentElement));
 		}
 
