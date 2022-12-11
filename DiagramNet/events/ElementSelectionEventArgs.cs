@@ -1,27 +1,14 @@
 using System;
 
 namespace DiagramNet.Events {
-	public class ElementSelectionEventArgs: EventArgs 
-	{
-		ElementCollection elements;
+  public class ElementSelectionEventArgs : EventArgs {
+    private readonly ElementCollection _elements;
 
-		public ElementSelectionEventArgs(ElementCollection elements)
-		{
-			this.elements = elements;
-		}
+    public ElementSelectionEventArgs(ElementCollection elements) => _elements = elements;
 
-		public ElementCollection Elements
-		{
-			get
-			{
-				return elements;
-			}
-		}
+    public ElementCollection Elements => _elements;
 
-		public override string ToString()
-		{
-			return "ElementCollection: " + elements.Count.ToString();
-		}
+    public override string ToString() => "ElementCollection: " + _elements.Count;
+  }
 
-	}
 }

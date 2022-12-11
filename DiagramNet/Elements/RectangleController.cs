@@ -33,7 +33,7 @@ namespace DiagramNet.Elements {
         selectionCorner[i] = new RectangleElement(0, 0, selCornerSize * 2, selCornerSize * 2) {
           BorderColor = Color.Black,
           FillColor1 = Color.White,
-          FillColor2 = Color.Empty
+          FillColor2 = Color.Gray
         };
       }
 		}

@@ -2,6 +2,7 @@
 using System.Runtime.Serialization;
 using DiagramNet.Elements;
 using DiagramNet.Events;
+using StaticExtensions;
 
 namespace DiagramNet {
 	/// <summary>
@@ -65,7 +66,7 @@ namespace DiagramNet {
 			elements.EnabledCalc = true;
 		}
 
-		internal bool CanAddLink(ConnectorElement connStart, ConnectorElement connEnd) {
+		internal static bool CanAddLink(ConnectorElement connStart, ConnectorElement connEnd) {
 			return ((connStart != connEnd) && (connStart.ParentElement != connEnd.ParentElement));
 		}
 
@@ -664,6 +665,34 @@ namespace DiagramNet {
 			OnElementPropertyChanged(sender, e);
 		}
 		#endregion
+
+		public void Save(string fileName) {
+			if (elements is not null) {
+				if (File.Exists(fileName)) {
+					File.Delete(fileName);
+				}
+				using StreamWriter w = File.CreateText(fileName);
+				string? elementsAsJson = elements.AsJsonString();
+				if (elementsAsJson is not null) {
+					w.Write(elementsAsJson);
+				}
+				
+			}
+		}
+
+		public void Open(string fileName) {
+			string sRawFileTxt;
+			if (File.Exists(fileName)) {
+				sRawFileTxt = File.ReadAllText(fileName);
+				if (sRawFileTxt is not null) {
+					ElementCollection? document1 = (ElementCollection?)sRawFileTxt.AsFromJsonString();
+					if (document1 is not null) {
+						elements = document1;
+						RecreateEventsHandlers();
+					}
+				}
+			}
+		}
 
 		#region IDeserializationCallback Members
 		void IDeserializationCallback.OnDeserialization(object? sender) {

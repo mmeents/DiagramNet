@@ -2,28 +2,22 @@ using System;
 using DiagramNet.Elements;
 
 namespace DiagramNet.Events {
-	public class ElementEventArgs: EventArgs
-	{
-		private BaseElement element;
+  public class ElementEventArgs : EventArgs {
+    private readonly BaseElement _element;
+    private readonly BaseElement? _previousElement;
 
-		public ElementEventArgs(BaseElement el)
-		{
-			element = el;
-		}
+    public ElementEventArgs(BaseElement el) => _element = el;
 
-		public BaseElement Element
-		{
-			get
-			{
-				return element;
-			}
-		}
+    public ElementEventArgs(BaseElement el, BaseElement previousEl)
+    {
+    _element = el;
+    _previousElement = previousEl;
+    }
 
-		public override string ToString()
-		{
-			return "el: " + element.GetHashCode();
-		}
+    public BaseElement Element => _element;
 
+    public BaseElement? PreviousElement => _previousElement;
 
-	}
+    public override string ToString() => "el: " + _element.GetHashCode();
+  }
 }

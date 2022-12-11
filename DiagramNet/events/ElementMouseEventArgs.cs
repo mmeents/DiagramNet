@@ -2,45 +2,16 @@ using System;
 using DiagramNet.Elements;
 
 namespace DiagramNet.Events {
-	public class ElementMouseEventArgs: ElementEventArgs 
-	{
-		private int x;
-		private int y;
+  public class ElementMouseEventArgs : ElementEventArgs {
+    public ElementMouseEventArgs(BaseElement el, int x, int y) : base(el) {
+    X = x;
+    Y = y;
+    }
 
-		public ElementMouseEventArgs(BaseElement el, int x, int y): base (el)
-		{
-			this.x = x;
-			this.y = y;
-		}
+    public int X { get; set; }
 
-		public int X
-		{
-			get
-			{
-				return x;
-			}
-			set
-			{
-				x = value;
-			}
-		}
+    public int Y { get; set; }
 
-		public int Y
-		{
-			get
-			{
-				return y;
-			}
-			set
-			{
-				y = value;
-			}
-		}
-
-		public override string ToString()
-		{
-			return base.ToString() + " X:" + x + " Y:" + y;
-		}
-
-	}
+    public override string ToString() => base.ToString() + " X:" + X + " Y:" + Y;
+  }
 }

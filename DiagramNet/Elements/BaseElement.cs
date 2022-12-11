@@ -21,20 +21,22 @@ namespace DiagramNet.Elements {
 		internal protected bool IsInvalidated = true;
 
 		protected BaseElement() {
+			location = new Point(0, 0);
+			size = new Size(0, 0);
 		}
 
 		protected BaseElement(int top, int left, int width, int height) {
 			location = new Point(top, left);
 			size = new Size(width, height);
 		}
-		public string? Name { get; set; }
+		public string Name { get; set; } ="";
 		public virtual Point Location {
 			get {
 				return location;
 			}
 			set {
 				location = value;
-				OnAppearanceChanged(new EventArgs());
+        OnAppearanceChanged(EventArgs.Empty);
 			}
 		}
 
@@ -44,7 +46,7 @@ namespace DiagramNet.Elements {
 			}
 			set {
 				size = value;
-				OnAppearanceChanged(new EventArgs());
+        OnAppearanceChanged(EventArgs.Empty);
 			}
 		}
 
@@ -54,7 +56,7 @@ namespace DiagramNet.Elements {
 			}
 			set {
 				visible = value;
-				OnAppearanceChanged(new EventArgs());
+        OnAppearanceChanged(EventArgs.Empty);
 			}
 		}
 
@@ -64,7 +66,7 @@ namespace DiagramNet.Elements {
 			}
 			set {
 				borderColor = value;
-				OnAppearanceChanged(new EventArgs());
+        OnAppearanceChanged(EventArgs.Empty);
 			}
 		}
 
@@ -74,7 +76,7 @@ namespace DiagramNet.Elements {
 			}
 			set {
 				borderWidth = value;
-				OnAppearanceChanged(new EventArgs());
+        OnAppearanceChanged(EventArgs.Empty);
 			}
 		}
 
@@ -88,7 +90,7 @@ namespace DiagramNet.Elements {
 				else
 					throw new Exception("'" + value + "' is not a valid value for 'Opacity'. 'Opacity' should be between 0 and 100.");
 
-				OnAppearanceChanged(new EventArgs());
+        OnAppearanceChanged(EventArgs.Empty);
 			}
 		}
 		internal virtual void Draw(Graphics g) {
