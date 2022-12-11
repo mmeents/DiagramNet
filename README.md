@@ -1,5 +1,7 @@
 # DiagramNET
 
+## Still needs a lot of work as serilization via json isn't testing out...
+
 Is a project based off of work done by Original: https://github.com/dalssoft/diagramnet
 
 DiagramNET is a free open-source diagramming tools written entirely in C#.  It is targeting .Net 6.0.
